@@ -57,7 +57,7 @@ class FirstDashboard extends StatelessWidget {
           image: const AssetImage('assets/images/recebimento.png'),
         ),
         Card(
-          elevation: 8,
+          elevation: 7,
           shadowColor: Colors.black,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
