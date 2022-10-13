@@ -41,6 +41,7 @@ dependencies:
   path_provider:
   persistent_bottom_nav_bar: ^5.0.2
   flutter_native_splash: ^2.2.10+1
+  date_time_picker: ^2.1.0
 
 dev_dependencies:
   flutter_test:

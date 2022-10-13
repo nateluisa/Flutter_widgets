@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api/widgets/date_picker.dart';
+import 'package:flutter_api/widgets/input_date.dart';
 
 import '../widgets/dashboard.dart';
 
@@ -10,7 +11,6 @@ class NovaContagem extends StatelessWidget {
   static String tag = 'contagem';
 
   final TextEditingController _codigoController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -45,32 +45,38 @@ class NovaContagem extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Colors.white,
-                Color.fromARGB(255, 49, 63, 137),
-              ],
-            )),
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [
+            Colors.white,
+            Color.fromARGB(255, 49, 63, 137),
+          ],
+        )),
         child: ListView(children: [
-           Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _codigoController,
-                    keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      label: Text('Código', style: TextStyle(
-                        fontSize: 19
-                      ),)
-                    ),
-                  ),
-
-                ],
-              ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: _codigoController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                      label: Text(
+                    'Código',
+                    style: TextStyle(fontSize: 19),
+                  )),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const MyDatePicker(dateLabelText: 'Data inicial'),
+                    const MyDatePicker(dateLabelText: 'Data final')
+                  ],
+                )
+              ],
             ),
-            const MyDatePicker()
+          ),
         ]),
       ),
       floatingActionButton: FloatingActionButton(
@@ -83,13 +89,12 @@ class NovaContagem extends StatelessWidget {
           //   codigo,
           // );
           // _dao.saveConferencia(newConferencia).then((id) =>
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                      const MyDashboard(),
-                ),
-              );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => const MyDashboard(),
+            ),
+          );
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text('Criada com sucesso!'),
           ));
