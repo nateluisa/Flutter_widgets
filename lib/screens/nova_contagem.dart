@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_api/dao/conferencia_dao.dart';
-import 'package:flutter_api/model/conferencia.dart';
-import 'package:flutter_api/widgets/dashboard1.dart';
+import 'package:flutter_api/widgets/date_picker.dart';
 
-import '../initial_pages/home.dart';
 import '../widgets/dashboard.dart';
 
 class NovaContagem extends StatelessWidget {
@@ -14,18 +11,17 @@ class NovaContagem extends StatelessWidget {
 
   final TextEditingController _codigoController = TextEditingController();
 
-  final ConferenciaDao _dao = ConferenciaDao();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueAccent[100],
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         actionsIconTheme:
-            IconThemeData(size: 30.0, color: Colors.white, opacity: 10.0),
-        backgroundColor: Color.fromARGB(255, 49, 63, 137),
-        title: Text(
+            const IconThemeData(size: 30.0, color: Colors.white, opacity: 10.0),
+        backgroundColor: const Color.fromARGB(255, 49, 63, 137),
+        title: const Text(
           "Nova contagem",
           style: TextStyle(color: Colors.white),
         ),
@@ -33,21 +29,21 @@ class NovaContagem extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_outlined, // add custom icons also
           ),
         ),
         actions: <Widget>[
           Padding(
-              padding: EdgeInsets.only(right: 20.0),
+              padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () {},
-                child: Icon(Icons.more_vert),
+                child: const Icon(Icons.more_vert),
               )),
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -64,16 +60,17 @@ class NovaContagem extends StatelessWidget {
                   TextFormField(
                     controller: _codigoController,
                     keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       label: Text('Código', style: TextStyle(
                         fontSize: 19
                       ),)
                     ),
                   ),
+
                 ],
               ),
             ),
-
+            const MyDatePicker()
         ]),
       ),
       floatingActionButton: FloatingActionButton(

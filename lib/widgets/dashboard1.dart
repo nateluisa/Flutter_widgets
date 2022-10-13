@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_api/screens/emissao.dart';
 import 'package:flutter_api/screens/recebimento.dart';
 import 'package:flutter_api/screens/transferencia.dart';
-import 'package:flutter_api/widgets/picture_card.dart';
 
 class FirstDashboard extends StatelessWidget {
   const FirstDashboard({Key? key}) : super(key: key);
@@ -29,14 +28,14 @@ class FirstDashboard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (contextNew) => Emissao(),
+                  builder: (contextNew) => const Emissao(),
                 ),
               );
             },
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage("assets/images/emissao.png"),
                   fit: BoxFit.cover,
                   alignment: Alignment.topCenter,
@@ -45,16 +44,32 @@ class FirstDashboard extends StatelessWidget {
             ),
           ),
         ),
-        MyPictureCard(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (contextNew) => const Emissao(),
+        Card(
+          elevation: 8,
+          shadowColor: Colors.black,
+          shape:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          color: Colors.transparent,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (contextNew) => const Recebimento(),
+                ),
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: const DecorationImage(
+                  image: AssetImage("assets/images/recebimento.png"),
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
+                ),
               ),
-            );
-          },
-          image: const AssetImage('assets/images/recebimento.png'),
+            ),
+          ),
         ),
         Card(
           elevation: 8,
@@ -67,14 +82,14 @@ class FirstDashboard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (contextNew) => Transferencia(),
+                  builder: (contextNew) => const Transferencia(),
                 ),
               );
             },
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage("assets/images/transferencia.png"),
                   fit: BoxFit.cover,
                   alignment: Alignment.topCenter,
