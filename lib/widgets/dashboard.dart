@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api/screens/continue_conferencia.dart';
 import 'package:flutter_api/screens/nova_contagem.dart';
-import 'package:flutter_api/widgets/dashboard1.dart';
 import 'package:flutter_api/widgets/menu.dart';
 
 import 'dialog.dart';
@@ -47,14 +46,14 @@ class MyDashboard extends StatelessWidget {
                   ),
                 ));
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_outlined, // add custom icons also
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 49, 63, 137),
+        backgroundColor: const Color.fromARGB(255, 49, 63, 137),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,

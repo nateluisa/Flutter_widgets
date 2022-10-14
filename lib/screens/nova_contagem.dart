@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api/widgets/date_picker.dart';
 import 'package:flutter_api/widgets/expansible_card.dart';
-import 'package:flutter_api/widgets/input_date.dart';
-import 'package:flutter_api/widgets/menu_popup.dart';
-import 'package:flutter_api/widgets/tabbar.dart';
-
 import '../widgets/dashboard.dart';
 
 class NovaContagem extends StatelessWidget {
@@ -72,17 +68,16 @@ class NovaContagem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const MyDatePicker(
+                  children: const [
+                    MyDatePicker(
                         dateLabelText: 'Data inicial', readOnly: false),
-                    const MyDatePicker(
-                      dateLabelText: 'Data final (read only)',
-                      readOnly: true,
+                    MyDatePicker(
+                      dateLabelText: 'Data final',
+                      readOnly: false,
                     ),
-
                   ],
                 ),
-                MyExpansibleCard()
+                MyExpansibleCard(),
               ],
             ),
           ),

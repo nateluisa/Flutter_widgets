@@ -49,6 +49,7 @@ dependencies:
   currency_text_input_formatter: ^2.1.7
   flutter_localizations:
     sdk: flutter
+  dotted_border: ^2.0.0+2
 
 dev_dependencies:
   flutter_test:
